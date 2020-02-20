@@ -1,16 +1,25 @@
 plugins {
     id 'java'
+    id 'application'
+    id "com.github.johnrengelman.shadow" version "5.2.0"
 }
+
+mainClassName = 'me.michael.Bot'
 
 group 'me.michael'
 version '1.0-SNAPSHOT'
+def jdaVersion = '4.1.1_108'
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "net.dv8tion:JDA:$jdaVersion"
 }
+
+compileJava.options.encoding = 'UTF-8'
