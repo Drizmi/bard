@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'application'
-    id "com.github.johnrengelman.shadow" version "5.2.0"
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
 }
 
 mainClassName = 'me.michael.Bot'
@@ -24,6 +24,8 @@ dependencies {
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.0'
     compile group: 'com.jagrosh', name: 'jda-utilities', version: '3.0.2'
     compile group: 'me.duncte123', name: 'botCommons', version: '1.0.78'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+
 }
 
 compileJava.options.encoding = 'UTF-8'

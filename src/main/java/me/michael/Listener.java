@@ -2,13 +2,17 @@ package me.michael;
 
 import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nonnull;
 
 public class Listener extends ListenerAdapter {
 
+  private static final Logger LOGGER = LoggerFactory.getLogger(Listener.class);
+
   @Override
   public void onReady(@Nonnull ReadyEvent event) {
-    System.out.printf("%#s is ready", event.getJDA().getSelfUser());
+    LOGGER.info("{} is ready", event.getJDA().getSelfUser().getAsTag());
   }
 }
