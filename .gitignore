@@ -2,4 +2,4 @@
 build/
 .gradle/
 out/
-src/main/resources/config.env
+.env
