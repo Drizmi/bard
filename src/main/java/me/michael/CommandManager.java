@@ -1,8 +1,8 @@
 package me.michael;
 
-import me.michael.command.CommandContext;
-import me.michael.command.ICommand;
-import me.michael.command.commands.PingCommand;
+import me.michael.command.*;
+import me.michael.command.commands.*;
+import me.michael.command.commands.utils.HelpCommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import javax.annotation.Nullable;
@@ -16,6 +16,7 @@ public class CommandManager {
 
   public CommandManager() {
     addCommand(new PingCommand());
+    addCommand(new HelpCommand(this));
   }
 
   private void addCommand(ICommand cmd) {
@@ -28,8 +29,12 @@ public class CommandManager {
     commands.add(cmd);
   }
 
+  public List<ICommand> getCommands() {
+    return commands;
+  }
+
   @Nullable
-  private ICommand getCommand(String search) {
+  public ICommand getCommand(String search) {
     String searchLower = search.toLowerCase();
 
     for (ICommand cmd : this.commands) {
