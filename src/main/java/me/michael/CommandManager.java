@@ -18,6 +18,7 @@ public class CommandManager {
     addCommand(new PingCommand());
     addCommand(new HelpCommand(this));
     addCommand(new MemeCommand());
+    addCommand(new InstagramCommand());
   }
 
   private void addCommand(ICommand cmd) {
