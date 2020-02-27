@@ -6,6 +6,7 @@ import me.michael.command.CommandContext;
 import me.michael.command.ICommand;
 import net.dv8tion.jda.api.entities.TextChannel;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class HelpCommand implements ICommand {
@@ -54,5 +55,10 @@ public class HelpCommand implements ICommand {
   public String getHelp() {
     return "Shows the list with commands in the bot\n" +
             "Usage: `!bard help [command]`";
+  }
+
+  @Override
+  public List<String> getAliases() {
+    return Arrays.asList("commands", "cmds", "commandlist");
   }
 }

@@ -17,6 +17,7 @@ public class CommandManager {
   public CommandManager() {
     addCommand(new PingCommand());
     addCommand(new HelpCommand(this));
+    addCommand(new MemeCommand());
   }
 
   private void addCommand(ICommand cmd) {
