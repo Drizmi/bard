@@ -4,6 +4,7 @@ import me.michael.command.*;
 import me.michael.command.commands.*;
 import me.michael.command.commands.music.JoinCommand;
 import me.michael.command.commands.music.LeaveCommand;
+import me.michael.command.commands.music.PlayCommand;
 import me.michael.command.commands.utils.HelpCommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
@@ -23,6 +24,7 @@ public class CommandManager {
     addCommand(new InstagramCommand());
     addCommand(new JoinCommand());
     addCommand(new LeaveCommand());
+    addCommand(new PlayCommand());
   }
 
   private void addCommand(ICommand cmd) {
