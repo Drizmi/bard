@@ -2,6 +2,7 @@ package me.michael.command;
 
 import me.duncte123.botcommons.commands.ICommandContext;
 import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import java.util.List;
@@ -28,4 +29,10 @@ public class CommandContext implements ICommandContext {
   public List<String> getArgs() {
     return this.args;
   }
+
+  @Override
+  public User getAuthor() {
+    return this.getEvent().getAuthor();
+  }
+
 }

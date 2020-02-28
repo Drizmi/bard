@@ -2,6 +2,8 @@ package me.michael;
 
 import me.michael.command.*;
 import me.michael.command.commands.*;
+import me.michael.command.commands.music.JoinCommand;
+import me.michael.command.commands.music.LeaveCommand;
 import me.michael.command.commands.utils.HelpCommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
@@ -19,6 +21,8 @@ public class CommandManager {
     addCommand(new HelpCommand(this));
     addCommand(new MemeCommand());
     addCommand(new InstagramCommand());
+    addCommand(new JoinCommand());
+    addCommand(new LeaveCommand());
   }
 
   private void addCommand(ICommand cmd) {
