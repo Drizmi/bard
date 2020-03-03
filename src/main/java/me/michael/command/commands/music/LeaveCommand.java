@@ -2,9 +2,6 @@ package me.michael.command.commands.music;
 
 import me.michael.command.CommandContext;
 import me.michael.command.ICommand;
-import net.dv8tion.jda.api.Permission;
-import net.dv8tion.jda.api.entities.GuildVoiceState;
-import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.entities.VoiceChannel;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
@@ -24,7 +21,7 @@ public class LeaveCommand implements ICommand {
 
     VoiceChannel voiceChannel = audioManager.getConnectedChannel();
 
-    if (voiceChannel.getMembers().contains(event.getMember())) {
+    if (voiceChannel.getMembers().contains(ctx.getAuthor())) {
       channel.sendMessage("You have to be in the same channel as me to use this").queue();
       return;
     }

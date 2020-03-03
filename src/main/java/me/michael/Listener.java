@@ -34,6 +34,7 @@ public class Listener extends ListenerAdapter {
     if (content.equalsIgnoreCase(prefix + "shutdown")
             && user.getId().equals(Config.get("owner_id"))) {
       LOGGER.info("Shutting down");
+      event.getChannel().sendMessage("Shutting down").queue();
       event.getJDA().shutdown();
       BotCommons.shutdown(event.getJDA());
 
