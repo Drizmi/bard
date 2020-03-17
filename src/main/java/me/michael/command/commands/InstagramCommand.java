@@ -45,7 +45,7 @@ public class InstagramCommand implements ICommand {
               .setThumbnail(pfp)
               .setDescription(String.format(
                       "**Private account:** %s\n**Bio:** %s\n**Following:** %s\n**Followers:** %s\n**Uploads:** %s",
-                      isPrivate, biography, following, followers, uploads
+                      toEmote(isPrivate), biography, following, followers, uploads
               ))
               .setImage(getLatestImage(json.get("images")));
 
@@ -80,4 +80,9 @@ public class InstagramCommand implements ICommand {
 
     return json.get(0).get("url").asText();
   }
+
+  private String toEmote(boolean bool) {
+    return bool ? "✅" : "❌";
+  }
+
 }
